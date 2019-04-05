@@ -24,6 +24,8 @@ import 'font-awesome/css/font-awesome.min.css';
 import "./App.css";
 import { clearCurrentProfile } from "./actions/profileActions";
 import Profiles from "./components/profiles/Profiles";
+import Profile from "./components/profile/Profile";
+import NotFound from "./components/not-found/NotFound";
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -57,7 +59,8 @@ class App extends Component {
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <PrivateRoute exact path="/profiles" component={Profiles} />
+              <Route exact path="/profiles" component={Profiles} />
+              <Route exact path="/profile/:handle" component={Profile} />
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 </Switch>
@@ -73,6 +76,7 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/add-education" component={AddEducation} />
               </Switch>
+              <Route exact path="/not-found" component={NotFound} />
             </div>
             <Footer />
           </div>
