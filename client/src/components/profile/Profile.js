@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { getProfileByHandle } from "../../actions/profileActions";
-import ProfileGithub from "./ProfileGithub";
+// import ProfileGithub from "./ProfileGithub";
 
 class Profile extends Component {
   componentDidMount() {
